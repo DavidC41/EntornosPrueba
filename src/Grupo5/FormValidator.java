@@ -5,15 +5,16 @@ public class FormValidator {
 	final int TAMAÑOTEL = 9;
 	final int TAMAÑOCP= 5;
 	
-    public boolean validar(String nombre, String email, String telefono, 
-            String direccion, String ciudad, String codigoPostal) {
+    public boolean validar(ValidarParameter parameterObject) {
 
-    	if (nombre == null || nombre.isEmpty()) return false;
-		if (email == null || !email.contains("@")) return false;
-		if (telefono == null || telefono.length() < TAMAÑOTEL) return false;
-		if (direccion == null || direccion.isEmpty()) return false;
-		if (ciudad == null || ciudad.isEmpty()) return false;
-		if (codigoPostal == null || codigoPostal.length() != TAMAÑOCP ) return false;
+    	if (parameterObject.nombre == null || parameterObject.nombre.isEmpty()) return false;
+		if (parameterObject.email == null || !parameterObject.email.contains("@")) return false;
+		if (parameterObject.telefono == null || parameterObject.telefono.length() < TAMAÑOTEL) return false;
+		if (parameterObject.direccion == null || parameterObject.direccion.isEmpty()) return false;
+		if (parameterObject.ciudad == null || parameterObject.ciudad.isEmpty()) return false;
+		if (parameterObject.codigoPostal == null || parameterObject.codigoPostal.length() != TAMAÑOCP ) return false;
 		return true;
+		
+		
 	}
 }
