@@ -1,4 +1,4 @@
-Miembros del grupos
+Miembros del grupo 5
 
 @Autor1: Diego Vargas
 @Autor2: David Campos
