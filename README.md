@@ -14,4 +14,3 @@ Creación del repositorio --David Campos
 Refactorizacion y commits -- David Campos y Diego Vargas
 Pull Request -- David Campos y Diego Vargas
 Readme -- Diego Vargas
-JavaDoc y HTML -- David Campos
