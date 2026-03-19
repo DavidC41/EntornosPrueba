@@ -1,16 +1,30 @@
 package Grupo5;
 
 public class FormValidator {
+	
+	final int TAMAÑOTEL = 9;
+	final int TAMAÑOCP =5;
 
-    public boolean validar(String nombre, String email, String telefono, 
-            String direccion, String ciudad, String codigoPostal) {
+    public boolean validar(ValidarParameter parameterObject) {
 
-    	if (nombre == null || nombre.isEmpty()) return false;
-		if (email == null || !email.contains("@")) return false;
-		if (telefono == null || telefono.length() < 9) return false;
-		if (direccion == null || direccion.isEmpty()) return false;
-		if (ciudad == null || ciudad.isEmpty()) return false;
-		if (codigoPostal == null || codigoPostal.length() != 5) return false;
+    	if (parameterObject.nombre == null || parameterObject.nombre.isEmpty()) return false;
+		if (isInvalidEmail(parameterObject)) return false;
+		if (isInvalidPhone(parameterObject)) return false;
+		if (parameterObject.direccion == null || parameterObject.direccion.isEmpty()) return false;
+		if (parameterObject.ciudad == null || parameterObject.ciudad.isEmpty()) return false;
+		if (isInvalidPostalCode(parameterObject)) return false;
 		return true;
+	}
+
+	private boolean isInvalidPostalCode(ValidarParameter parameterObject) {
+		return parameterObject.codigoPostal == null || parameterObject.codigoPostal.length() != TAMAÑOCP;
+	}
+
+	private boolean isInvalidPhone(ValidarParameter parameterObject) {
+		return parameterObject.telefono == null || parameterObject.telefono.length() < TAMAÑOTEL;
+	}
+
+	private boolean isInvalidEmail(ValidarParameter parameterObject) {
+		return parameterObject.email == null || !parameterObject.email.contains("@");
 	}
 }
